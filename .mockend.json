@@ -1,0 +1,52 @@
+{
+  "User": {
+    "username": "string",
+    "name": {
+      "first": "string",
+      "last": "string"
+    },
+    "picture": "https://cdn.pixabay.com/photo/2021/03/12/08/01/child-6089047__480.png",
+    "bio": "string",
+    "followers": "Follower[]",
+    "following": "Following[]",
+    "posts": "Post[]",
+    "likes": "Like[]",
+    "createdAt": "date"
+  },
+  "Post": {
+    "title": "string",
+    "description": "string",
+    "image": "https://cdn.pixabay.com/photo/2021/02/03/08/48/woman-5977115__480.png",
+    "views": "int",
+    "published": "boolean",
+    "createdAt": "date",
+    "comments": "Comment[]",
+    "likes": "Like[]",
+    "user": "User"
+  },
+  "Comment": {
+    "body": "string",
+    "post": "Post",
+    "user":"User"
+  },
+  "Like": {
+    "user": "User",
+    "post": "Post"
+  },
+  "Follower": {
+    "username": "string",
+    "name": {
+      "first": "string",
+      "last": "string"
+    },
+    "picture": "https://cdn.pixabay.com/photo/2021/03/12/08/01/child-6089047__480.png"
+  },
+  "Following": {
+    "username": "string",
+    "name": {
+      "first": "string",
+      "last": "string"
+    },
+    "picture": "https://cdn.pixabay.com/photo/2021/03/12/08/01/child-6089047__480.png"
+  }
+}
