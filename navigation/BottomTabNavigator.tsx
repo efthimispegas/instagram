@@ -1,13 +1,6 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { Text } from '../components/Themed';
-import {
-  Entypo,
-  Fontisto,
-  Ionicons,
-  MaterialIcons,
-  Octicons,
-} from '@expo/vector-icons';
+import { Entypo, Ionicons, MaterialIcons, Octicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import Colors from '../constants/Colors';
@@ -35,52 +28,45 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Home"
+      initialRouteName='Home'
       tabBarOptions={{
         activeTintColor: Colors[colorScheme].tabIconSelected,
         inactiveTintColor: Colors[colorScheme].tabIconDefault,
-      }}
-    >
+      }}>
       <BottomTab.Screen
-        name="Home"
+        name='Home'
         component={HomeNavigator}
         options={{
           tabBarIcon: ({ color, focused }) =>
             focused ? (
-              <Ionicons name="home-sharp" color={color} size={24} />
+              <Ionicons name='home-sharp' color={color} size={24} />
             ) : (
-              <Ionicons name="home-outline" color={color} size={24} />
+              <Ionicons name='home-outline' color={color} size={24} />
             ),
-          tabBarLabel: ({ focused }) => (
-            <TabBarLabel
-              focused={focused}
-              color={Colors[colorScheme].tabIconSelectedLabel}
-              size={18}
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="Search"
-        component={SearchNavigator}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="search" color={color} size={24} />
-          ),
           tabBarLabel: ({ focused }) => (
             <TabBarLabel focused={focused} color={Colors[colorScheme].tabIconSelectedLabel} size={18} />
           ),
         }}
       />
       <BottomTab.Screen
-        name="NewPost"
+        name='Search'
+        component={SearchNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <Ionicons name='search' color={color} size={24} />,
+          tabBarLabel: ({ focused }) => (
+            <TabBarLabel focused={focused} color={Colors[colorScheme].tabIconSelectedLabel} size={18} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name='NewPost'
         component={NewPostNavigator}
         options={{
           tabBarIcon: ({ color, focused }) =>
             focused ? (
-              <MaterialIcons name="add-box" color={color} size={24} />
+              <MaterialIcons name='add-box' color={color} size={24} />
             ) : (
-              <Octicons name="diff-added" color={color} size={24} />
+              <Octicons name='diff-added' color={color} size={24} />
             ),
           tabBarLabel: ({ focused }) => (
             <TabBarLabel focused={focused} color={Colors[colorScheme].tabIconSelectedLabel} size={18} />
@@ -88,14 +74,14 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Notifications"
+        name='Notifications'
         component={NotificationsNavigator}
         options={{
           tabBarIcon: ({ color, focused }) =>
             focused ? (
-              <Ionicons name="ios-heart-sharp" color={color} size={24} />
+              <Ionicons name='ios-heart-sharp' color={color} size={24} />
             ) : (
-              <Ionicons name="ios-heart-outline" color={color} size={24} />
+              <Ionicons name='ios-heart-outline' color={color} size={24} />
             ),
           tabBarLabel: ({ focused }) => (
             <TabBarLabel focused={focused} color={Colors[colorScheme].tabIconSelectedLabel} size={18} />
@@ -103,18 +89,14 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Profile"
+        name='Profile'
         component={ProfileNavigator}
         options={{
           tabBarIcon: ({ color, focused }) =>
             focused ? (
-              <Ionicons name="md-person-circle-sharp" color={color} size={24} />
+              <Ionicons name='md-person-circle-sharp' color={color} size={24} />
             ) : (
-              <Ionicons
-                name="md-person-circle-outline"
-                color={color}
-                size={24}
-              />
+              <Ionicons name='md-person-circle-outline' color={color} size={24} />
             ),
           tabBarLabel: ({ focused }) => (
             <TabBarLabel focused={focused} color={Colors[colorScheme].tabIconSelectedLabel} size={18} />
@@ -126,11 +108,7 @@ export default function BottomTabNavigator() {
 }
 
 function TabBarLabel(props: { focused: boolean; color: string; size: number }) {
-  return props.focused ? (
-    <Entypo name="dot-single" color={props.color} size={props.size} />
-  ) : (
-    <Text> </Text>
-  );
+  return props.focused ? <Entypo name='dot-single' color={props.color} size={props.size} /> : <Text> </Text>;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
@@ -140,11 +118,7 @@ const HomeStack = createStackNavigator<HomeParamList>();
 function HomeNavigator() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{ headerTitle: 'Home' }}
-      />
+      <HomeStack.Screen name='Home' component={HomeScreen} options={{ headerTitle: 'Home' }} />
     </HomeStack.Navigator>
   );
 }
@@ -154,11 +128,7 @@ const SearchStack = createStackNavigator<SearchParamList>();
 function SearchNavigator() {
   return (
     <SearchStack.Navigator>
-      <SearchStack.Screen
-        name="Search"
-        component={SearchScreen}
-        options={{ headerTitle: 'Search' }}
-      />
+      <SearchStack.Screen name='Search' component={SearchScreen} options={{ headerTitle: 'Search' }} />
     </SearchStack.Navigator>
   );
 }
@@ -168,11 +138,7 @@ const MessagesStack = createStackNavigator<MessagesParamList>();
 function MessagesNavigator() {
   return (
     <MessagesStack.Navigator>
-      <MessagesStack.Screen
-        name="Messages"
-        component={MessagesScreen}
-        options={{ headerTitle: 'Messages' }}
-      />
+      <MessagesStack.Screen name='Messages' component={MessagesScreen} options={{ headerTitle: 'Messages' }} />
     </MessagesStack.Navigator>
   );
 }
@@ -183,7 +149,7 @@ function NotificationsNavigator() {
   return (
     <NotificationsStack.Navigator>
       <NotificationsStack.Screen
-        name="Notifications"
+        name='Notifications'
         component={NotificationsScreen}
         options={{ headerTitle: 'Notifications' }}
       />
@@ -196,11 +162,7 @@ const NewPostStack = createStackNavigator<NewPostParamList>();
 function NewPostNavigator() {
   return (
     <NewPostStack.Navigator>
-      <NewPostStack.Screen
-        name="NewPost"
-        component={NewPostScreen}
-        options={{ headerTitle: 'New Post' }}
-      />
+      <NewPostStack.Screen name='NewPost' component={NewPostScreen} options={{ headerTitle: 'New Post' }} />
     </NewPostStack.Navigator>
   );
 }
@@ -210,11 +172,7 @@ const ProfileStack = createStackNavigator<ProfileParamList>();
 function ProfileNavigator() {
   return (
     <ProfileStack.Navigator>
-      <ProfileStack.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{ headerTitle: 'Profile' }}
-      />
+      <ProfileStack.Screen name='Profile' component={ProfileScreen} options={{ headerTitle: 'Profile' }} />
     </ProfileStack.Navigator>
   );
 }
