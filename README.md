@@ -1,5 +1,5 @@
 # A personal take on the Instagram app 📺
-This project is about creating a modern social app on both iOS and android platforms, utilizing the latest libraries in the tech market. A simple, yet elegant concept similar to the famous social app that focuses on sharing photos with friends :📸 
+This project is about creating a modern social app on both iOS and android platforms, utilizing the latest libraries in the tech market. A simple, yet elegant concept similar to the famous social app that focuses on sharing photos with friends 📸 
 
 ## Setting up the environment
 
